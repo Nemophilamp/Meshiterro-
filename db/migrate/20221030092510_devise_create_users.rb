@@ -34,7 +34,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
       ## 名前を保存するカラム
       t.string :name
-      
+      t.string :shop_name
+      t.text :caption
+      t.integer :user_id
+
       t.timestamps null: false
     end
 
