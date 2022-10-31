@@ -11,7 +11,9 @@ class PostImagesController < ApplicationController
     redirect_to post_images_path
   end
   
+  # タイムライン上に表示する投稿データを取得
   def index
+    @post_images = PostImage.all
   end
 
   def show
