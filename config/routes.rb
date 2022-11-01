@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get '/homes/about' => 'homes#about', as: 'about'
   resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+# 単数形/「いいね」1つの投稿に対して1回
+    resource :favorites, only: [:crate, :des]
     resources :post_comments, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update]
