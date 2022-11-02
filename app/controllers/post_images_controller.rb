@@ -13,10 +13,10 @@ class PostImagesController < ApplicationController
       render :new   # バリデーション,保存できなかったら(falseなら)
     end
   end
-  
+
   # タイムライン上に表示する投稿データを取得
   def index
-    @post_images = PostImage.all
+    @post_images = PostImage.page(params[:page])
   end
 
   def show
@@ -24,13 +24,13 @@ class PostImagesController < ApplicationController
     # コメントを投稿するためのインスタンス変数を定義
     @post_comment = PostComment.new
   end
-  
+
   def destroy
     @post_image =  PostImage.find(params[:id])
     @post_image.destroy
     redirect_to PostImages_path
   end
-  
+
   # 投稿データのストロングパラメータ
   private
 
