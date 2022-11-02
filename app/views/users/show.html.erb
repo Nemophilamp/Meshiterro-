@@ -8,3 +8,7 @@
     <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
   <% end %>
 </div>
+
+ <!--ユーザーの投稿一覧-->
+ <%= render 'post_images/list', post_images: @post_images %>
+ <!--ここはpost_imagesフォルダ内ではなく、usersフォルダなので、フォルダ名（post_images）を指定する。-->
