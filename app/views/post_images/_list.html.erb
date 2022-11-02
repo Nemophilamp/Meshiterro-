@@ -3,7 +3,8 @@
   <!--image_tag   post_imageにActiveStorageで設定したimageを表示-->
   <!--post_image.get_image   PostImageモデル内に記述したメソッドを呼び出し-->
 
-<% @post_images.each do |post_image| %>
+<!--＠⇒ローカル変数に-->
+<% post_images.each do |post_image| %>
 <div>
   <%= link_to post_image_path(post_image.id) do %>
     <%= image_tag post_image.get_image %>
